@@ -29,9 +29,13 @@ class NotesService {
   }
 
   async getNotes() {
-    const result = await this._pool.query('SELECT * FROM notes');
+    try {
+      const result = await this._pool.query('SELECT * FROM notes');
 
-    return result.rows.map(mapDBToModel);
+      return result.rows.map(mapDBToModel);
+    } catch (error) {
+      return error;
+    }
   }
 
   async getNoteById(id) {
@@ -42,7 +46,7 @@ class NotesService {
 
     const result = await this._pool.query(query);
 
-    if (!result.rows.length) {
+    if (!result.rowCount) {
       throw new NotFountError('Catatan tidak ditemukan');
     }
 
@@ -58,7 +62,7 @@ class NotesService {
 
     const result = await this._pool.query(query);
 
-    if (!result.rows.length) {
+    if (!result.rowCount) {
       throw new NotFountError('Gagal memperbarui catatan. Id tidak ditemukan');
     }
   }
@@ -71,7 +75,7 @@ class NotesService {
 
     const result = await this._pool.query(query);
 
-    if (!result.rows.length) {
+    if (!result.rowCount) {
       throw new NotFountError('Catatan gagal dihapus. ID tidak ditemukan');
     }
   }
