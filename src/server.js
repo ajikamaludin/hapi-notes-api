@@ -99,9 +99,6 @@ const init = async () => {
       newResponse.code(response.statusCode);
       return newResponse;
     }
-    if (response instanceof Error) {
-      console.log(response);
-    }
 
     return response.continue || response;
   });
