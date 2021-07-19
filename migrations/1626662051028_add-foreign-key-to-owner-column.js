@@ -13,6 +13,7 @@ exports.up = (pgm) => {
   pgm.addConstraint('notes', 'fk_notes.owner_users.id', 'FOREIGN KEY(owner) REFERENCES users(id) ON DELETE CASCADE');
 };
 
+// eslint-disable-next-line no-unused-vars
 exports.down = (pgm) => {
   //
 };
