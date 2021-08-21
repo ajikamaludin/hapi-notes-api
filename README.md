@@ -5,17 +5,24 @@ belajar kelas backend dicoding
 [queue consumer for send email](https://github.com/ajikamaludin/notes-app-queue-consumer)
 
 requirement 
-- node 12
+- node >= 12
 
 ### start dev
 
 - install 
-    npm install 
+
+   	   npm install 
+    
 - config database connection
-    cp .env.example .env
+
+   	   cp .env.example .env
+   
 - create database table
-    npm run migrate 
+
+  	  npm run migrate 
+  
 - run app
-	npm run start
+
+	  npm run start
 	
 collection : Link
