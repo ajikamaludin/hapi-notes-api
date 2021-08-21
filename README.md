@@ -25,4 +25,4 @@ requirement
 
 	  npm run start
 	
-collection : Link
+postman collection : [Link](https://github.com/ajikamaludin/hapi-notes-api/blob/master/Notes%20API%20Test.postman_collection.json)
